@@ -1,27 +1,23 @@
 class HelloController < ApplicationController
 
-
   def index
-    @title = "View Sample"
-    @msg = "コントローラーに用意した値です"
-    # if params['msg'] != nil then
-    #   msg = 'Hello,' + params['msg'] + '!'
-    # else
-    #   msg = 'this is sample page.'
-    # end
+    if request.post? then
+      @title ='Result'
+     if params['r1'] then
+      @msg = 'you selected: ' + params['r1']
+     else
+      @msg = 'not selected...'
+      end
+    else
+      @title ='Index'
+      @msg = 'check it...'
+    end
 
-    # html = '
-    # <html>
-    # <body>
-    #   <h1>Sample Page</h1>
-    #   <p>' + msg + '</p>
-    # </body>
-    # </html>
-    # '
-    # render html: html.html_safe
+  end
 
-  # p63 アクションを追加する
-  # render plain: "Hello, This is Rails sample page!"
+  def other
+
+    redirect_to action: :index, params:{'msg': 'from other page'}
   end
 
 end
