@@ -1,2 +1,2 @@
-module MsgboadHelper
+module MsgboardHelper
 end

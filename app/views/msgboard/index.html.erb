@@ -1,15 +1,15 @@
-<%= form_tag(contloller; "msgboad", action: "index") do %>
+<%= form_tag(contloller: "msgboard", action: "index") do %>
   <div class="form-group">
     <label for="name">名前</label>
-    <%= text_field_tag("name", "", {class: "form_control"}) %>
+    <%= text_field_tag("name", "", {class: "form-control"}) %>
   </div>
   <div class="form-group">
-    <label for="name">メール</label>
-    <%= text_field_tag("mail", "", {class: "form_control"}) %>
+    <label for="mail">メール</label>
+    <%= text_field_tag("mail", "", {class: "form-control"}) %>
   </div>
   <div class="form-group">
-    <label for="name">メッセージ</label>
-    <%= text_field_tag("msg", "", {class: "form_control"}) %>
+    <label for="msg">メッセージ</label>
+    <%= text_area_tag("msg", "", {class: "form-control"}) %>
   </div>
   <%= submit_tag("Click", {class: "btn btn-primary"}) %>
 <% end %>
