@@ -1,26 +1,16 @@
 class HelloController < ApplicationController
-
+  layout 'hello'
 
   def index
+    @header = 'layout sample'
+    @footer = 'copyright KAHO 2021.'
+    @title = 'New layout'
+    @msg = 'this is sample page!'
+  end
 
-    if params['msg'] != nil then
-      msg = 'Hello,' + params['msg'] + '!'
-    else
-      msg = 'this is sample page.'
-    end
+  def other
 
-    html = '
-    <html>
-    <body>
-      <h1>Sample Page</h1>
-      <p>' + msg + '</p>
-    </body>
-    </html>
-    '
-    render html: html.html_safe
-
-  # p63 アクションを追加する
-  # render plain: "Hello, This is Rails sample page!"
+    redirect_to action: :index, params:{'msg': 'from other page'}
   end
 
 end
