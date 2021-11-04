@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'people/index'
+  get 'people', to: 'people#index'
   get 'hello/index'
   get 'hello', to: 'hello#index'
   get 'hello/other'
